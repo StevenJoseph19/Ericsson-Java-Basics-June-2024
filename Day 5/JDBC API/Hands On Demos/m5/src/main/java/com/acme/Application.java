@@ -4,18 +4,35 @@ import java.sql.*;
 import java.time.LocalDate;
 
 public class Application {
-//    static String url = "jdbc:postgresql://localhost:5432/loboticket";
-        static String url = "jdbc:mysql://localhost:3306/loboticket";
+    //    static String url = "jdbc:postgresql://localhost:5432/loboticket";
+    static String url = "jdbc:mysql://localhost:3306/loboticket";
     static String userName = "root";
-//    static String userName = "postgres";
+    //    static String userName = "postgres";
     static String password = "password";
 
     public static void main(String[] args) throws SQLException {
 
         try (Connection conn = DriverManager.getConnection(url, userName, password)) {
-//            csSetNewPrice(conn);
+//            simpleReadWithExecuteQuery(conn);
+//            simpleInsertWithExecuteUpdate(conn);
+//            simpleUpdateWithExecuteUpdate(conn);
+//            simpleDeleteWithExecuteUpdate(conn);
+//            simpleInsertWithExecute(conn);
+//            simpleSelectWithExecute(conn);
+//            insertMultipleValues(conn);
+//            insertWithTooManyParameters(conn);
+//            selectWithParameters(conn);
+//            insertWithSetObject(conn);
+//            useResultSetWithColumnNumber(conn);
+//            useResultSetWithColumnName(conn);
+//            useResultSetWithIfAndColumnIndex(conn);
+//            useResultSetWithIfAndColumnName(conn);
+//            useResultSetWithGetObject(conn);
+//            insertAct(conn, "BG", "Dettol Row");
+//            csGetActsWithRecordLabel(conn);
+//            csGigReportWithINParameters(conn);
 //            csGetTotalSalesWithOutParameter(conn);
-            csGetActsWithRecordLabel(conn);
+//            csSetNewPrice(conn);
         }
     }
 

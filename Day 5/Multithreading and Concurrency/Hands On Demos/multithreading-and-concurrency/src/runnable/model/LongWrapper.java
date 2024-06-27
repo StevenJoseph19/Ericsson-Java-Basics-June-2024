@@ -15,9 +15,9 @@ public class LongWrapper {
 
 //	public synchronized void  incrementValue() {
 	public void incrementValue() {
-		synchronized (key) {
+//		synchronized (key) {
 			l = l + 1;
-		}
+//		}
 
 	}
 

@@ -16,10 +16,10 @@ class RaceCondition {
 			}
 		};
 
-//		Thread t = new Thread(r);
-//		t.start();
-//
-//		t.join();
+		Thread t = new Thread(r);
+		t.start();
+
+		t.join();
 
 		Thread[] threads = new Thread[1_000];
 

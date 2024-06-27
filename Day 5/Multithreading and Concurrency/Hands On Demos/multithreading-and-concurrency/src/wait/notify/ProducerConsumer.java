@@ -2,7 +2,7 @@ package wait.notify;
 
 public class ProducerConsumer {
 
-	private static Object lock = new Object();
+//	private static Object lock = new Object();
 
 	private static int[] buffer;
 	private static int count;
@@ -11,44 +11,44 @@ public class ProducerConsumer {
 
 		void produce() {
 
-			synchronized (lock) {
-//				while (isFull(buffer)) {
-				if (isFull(buffer)) {
-					try {
-						lock.wait();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-
-					}
+//			synchronized (lock) {
+				while (isFull(buffer)) {
+//				if (isFull(buffer)) {
+//					try {
+//						lock.wait();
+//					} catch (InterruptedException e) {
+//						e.printStackTrace();
+//
+//					}
 
 				}
 
 				buffer[count++] = 1;
-				lock.notify();
+//				lock.notify();
 			}
 
 		}
-	}
+//	}
 
 	static class Consumer {
 
 		void consume() {
-			synchronized (lock) {
-//				while (isEmpty(buffer)) {
-				if (isEmpty(buffer)) {
-					try {
-						lock.wait();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-
-					}
+//			synchronized (lock) {
+				while (isEmpty(buffer)) {
+//				if (isEmpty(buffer)) {
+//					try {
+//						lock.wait();
+//					} catch (InterruptedException e) {
+//						e.printStackTrace();
+//
+//					}
 				}
 
 				buffer[--count] = 0;
-				lock.notify();
+//				lock.notify();
 			}
 		}
-	}
+//	}
 
 	static boolean isEmpty(int[] buffer) {
 		return count == 0;
@@ -77,8 +77,8 @@ public class ProducerConsumer {
 		};
 
 		Runnable consumeTask = () -> {
-//			for (int i = 0; i < 50; i++) {
-			for (int i = 0; i < 45; i++) {
+			for (int i = 0; i < 50; i++) {
+//			for (int i = 0; i < 45; i++) {
 				consumer.consume();
 
 			}
